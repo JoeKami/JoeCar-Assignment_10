@@ -1,4 +1,4 @@
-package com.coderscampus.JoeCar_Assignment_10;
+package com.coderscampus.assignment10;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
