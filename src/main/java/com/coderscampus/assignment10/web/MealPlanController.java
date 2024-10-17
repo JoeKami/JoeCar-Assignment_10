@@ -20,11 +20,11 @@ public class MealPlanController {
 
     @GetMapping("mealplanner/week")
     public ResponseEntity<WeekMeals> getWeekMeals(@RequestParam String numCalories, @RequestParam String diet, @RequestParam String exclusions) {
-        return mealPlanService.getWeeklyMealPlan();
+        return mealPlanService.getWeeklyMeals();
     }
 
     @GetMapping("mealplanner/day")
     public ResponseEntity<DayMeals> getDayMeals(@RequestParam String numCalories, @RequestParam String diet, @RequestParam String exclusions) {
-        return mealPlanService.getDailyMealPlan();
+        return mealPlanService.getDailyMeals();
     }
 }
