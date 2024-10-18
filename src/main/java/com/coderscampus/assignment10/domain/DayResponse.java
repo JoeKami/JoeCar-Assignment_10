@@ -1,11 +1,11 @@
 package com.coderscampus.assignment10.domain;
 
-public class DayMeals {
+public class DayResponse {
     private String numCalories;
     private String diet;
     private String exclusions;
 
-    public DayMeals() {
+    public DayResponse() {
     }
 
     public String getNumCalories() {

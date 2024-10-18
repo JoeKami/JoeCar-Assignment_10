@@ -1,12 +1,10 @@
 package com.coderscampus.assignment10.service;
 
 
-import com.coderscampus.assignment10.domain.DayMeals;
-import com.coderscampus.assignment10.domain.WeekMeals;
+import com.coderscampus.assignment10.domain.DayResponse;
+import com.coderscampus.assignment10.domain.WeekResponse;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
 @Service
@@ -24,9 +22,9 @@ public class MealPlanService {
     public MealPlanService() {
     }
 
-    private final RestTemplate restTemplate = new RestTemplate();
+//    private final RestTemplate restTemplate = new RestTemplate();
 
-    public DayMeals getDailyMeals(String numCalories, String diet, String exclusions) {
+    public DayResponse getDailyMeals(String numCalories, String diet, String exclusions) {
 
         String apiUrl = spoonacularBaseUrl + spoonacularMealPlanUrl;
 
@@ -37,17 +35,17 @@ public class MealPlanService {
                 .queryParam("exclude", exclusions)
                 .queryParam("apiKey", apiKey);
 
-        String finalUrl = uriComponentsBuilder.toUriString();
-        ResponseEntity<DayMeals> response = restTemplate.getForEntity(finalUrl, DayMeals.class);
+//        String finalUrl = uriComponentsBuilder.toUriString();
+//        ResponseEntity<DayMeals> response = restTemplate.getForEntity(finalUrl, DayMeals.class);
 
-        DayMeals dayMeals = new DayMeals();
-        dayMeals.setDiet(diet);
-        dayMeals.setNumCalories(numCalories);
-        dayMeals.setExclusions(exclusions);
-        return dayMeals;
+        DayResponse dayResponse = new DayResponse();
+        dayResponse.setDiet(diet);
+        dayResponse.setNumCalories(numCalories);
+        dayResponse.setExclusions(exclusions);
+        return dayResponse;
     }
 
-    public WeekMeals getWeeklyMeals(String numCalories, String diet, String exclusions) {
+    public WeekResponse getWeeklyMeals(String numCalories, String diet, String exclusions) {
         String apiUrl = spoonacularBaseUrl + spoonacularMealPlanUrl;
 
         UriComponentsBuilder uriComponentsBuilder = UriComponentsBuilder.fromUriString(apiUrl)
@@ -57,14 +55,14 @@ public class MealPlanService {
                 .queryParam("exclude", exclusions)
                 .queryParam("apiKey", apiKey);
 
-        String finalUrl = uriComponentsBuilder.toUriString();
-        ResponseEntity<WeekMeals> response = restTemplate.getForEntity(finalUrl, WeekMeals.class);
+//        String finalUrl = uriComponentsBuilder.toUriString();
+//        ResponseEntity<WeekMeals> response = restTemplate.getForEntity(finalUrl, WeekMeals.class);
 
-        WeekMeals weekMeals = new WeekMeals();
-        weekMeals.setNumCalories(numCalories);
-        weekMeals.setDiet(diet);
-        weekMeals.setExclusions(exclusions);
-        return weekMeals;
+        WeekResponse weekResponse = new WeekResponse();
+        weekResponse.setNumCalories(numCalories);
+        weekResponse.setDiet(diet);
+        weekResponse.setExclusions(exclusions);
+        return weekResponse;
     }
 
     //This URL was the one that worked instead of 'localhost:8080'

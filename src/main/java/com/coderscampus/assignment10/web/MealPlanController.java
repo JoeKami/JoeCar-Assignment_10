@@ -1,7 +1,7 @@
 package com.coderscampus.assignment10.web;
 
-import com.coderscampus.assignment10.domain.DayMeals;
-import com.coderscampus.assignment10.domain.WeekMeals;
+import com.coderscampus.assignment10.domain.DayResponse;
+import com.coderscampus.assignment10.domain.WeekResponse;
 import com.coderscampus.assignment10.service.MealPlanService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,14 +18,14 @@ public class MealPlanController {
     }
 
     @GetMapping("/week")
-    public ResponseEntity<WeekMeals> getWeekMeals(@RequestParam String numCalories, @RequestParam String diet, @RequestParam String exclusions) {
-        WeekMeals weekMeals = mealPlanService.getWeeklyMeals(numCalories, diet, exclusions);
-        return ResponseEntity.ok(weekMeals);
+    public ResponseEntity<WeekResponse> getWeekMeals(@RequestParam String numCalories, @RequestParam String diet, @RequestParam String exclusions) {
+        WeekResponse weekResponse = mealPlanService.getWeeklyMeals(numCalories, diet, exclusions);
+        return ResponseEntity.ok(weekResponse);
     }
 
     @GetMapping("/day")
-    public ResponseEntity<DayMeals> getDayMeals(@RequestParam String numCalories, @RequestParam String diet, @RequestParam String exclusions) {
-        DayMeals dayMeals = mealPlanService.getDailyMeals(numCalories, diet, exclusions);
-        return ResponseEntity.ok(dayMeals);
+    public ResponseEntity<DayResponse> getDayMeals(@RequestParam String numCalories, @RequestParam String diet, @RequestParam String exclusions) {
+        DayResponse dayResponse = mealPlanService.getDailyMeals(numCalories, diet, exclusions);
+        return ResponseEntity.ok(dayResponse);
     }
 }

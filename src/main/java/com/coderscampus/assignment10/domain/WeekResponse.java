@@ -1,11 +1,11 @@
 package com.coderscampus.assignment10.domain;
 
-public class WeekMeals {
+public class WeekResponse {
     private String numCalories;
     private String diet;
     private String exclusions;
 
-    public WeekMeals() {
+    public WeekResponse() {
     }
 
     public String getNumCalories() {
