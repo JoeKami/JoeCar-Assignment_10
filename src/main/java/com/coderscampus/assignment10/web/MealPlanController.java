@@ -17,13 +17,13 @@ public class MealPlanController {
         this.mealPlanService = mealPlanService;
     }
 
-    @GetMapping("/week")
+    @GetMapping("mealplanner/week")
     public ResponseEntity<WeekResponse> getWeekMeals(@RequestParam String numCalories, @RequestParam String diet, @RequestParam String exclusions) {
         WeekResponse weekResponse = mealPlanService.getWeeklyMeals(numCalories, diet, exclusions);
         return ResponseEntity.ok(weekResponse);
     }
 
-    @GetMapping("/day")
+    @GetMapping("mealplanner/day")
     public ResponseEntity<DayResponse> getDayMeals(@RequestParam String numCalories, @RequestParam String diet, @RequestParam String exclusions) {
         DayResponse dayResponse = mealPlanService.getDailyMeals(numCalories, diet, exclusions);
         return ResponseEntity.ok(dayResponse);

@@ -1,43 +1,18 @@
 package com.coderscampus.assignment10.domain;
 
+import java.util.Map;
+
 public class WeekResponse {
-    private String numCalories;
-    private String diet;
-    private String exclusions;
+    private Map<String, DayResponse> week;
 
     public WeekResponse() {
     }
 
-    public String getNumCalories() {
-        return numCalories;
+    public Map<String, DayResponse> getWeek() {
+        return week;
     }
 
-    public void setNumCalories(String numCalories) {
-        this.numCalories = numCalories;
-    }
-
-    public String getDiet() {
-        return diet;
-    }
-
-    public void setDiet(String diet) {
-        this.diet = diet;
-    }
-
-    public String getExclusions() {
-        return exclusions;
-    }
-
-    public void setExclusions(String exclusions) {
-        this.exclusions = exclusions;
-    }
-
-    @Override
-    public String toString() {
-        return "WeekMeals{" +
-                "numCalories='" + numCalories + '\'' +
-                ", diet='" + diet + '\'' +
-                ", exclusions='" + exclusions + '\'' +
-                '}';
+    public void setWeek(Map<String, DayResponse> week) {
+        this.week = week;
     }
 }

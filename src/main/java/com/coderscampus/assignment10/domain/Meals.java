@@ -1,16 +1,14 @@
 package com.coderscampus.assignment10.domain;
 
 public class Meals {
-    private String id;
+    private int id;
     private String imageType;
     private String title;
-    private String readyInMinutes;
-    private String servings;
+    private int readyInMinutes;
+    private int servings;
     private String sourceUrl;
 
-    public Meals() {}
-
-    public Meals (String id, String imageType, String title, String readyInMinutes, String servings, String sourceUrl ) {
+    public Meals (int id, String imageType, String title, int readyInMinutes, int servings, String sourceUrl ) {
         this.id = id;
         this.imageType = imageType;
         this.title = title;
@@ -19,11 +17,11 @@ public class Meals {
         this.sourceUrl = sourceUrl;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -43,19 +41,19 @@ public class Meals {
         this.title = title;
     }
 
-    public String getReadyInMinutes() {
+    public int getReadyInMinutes() {
         return readyInMinutes;
     }
 
-    public void setReadyInMinutes(String readyInMinutes) {
+    public void setReadyInMinutes(int readyInMinutes) {
         this.readyInMinutes = readyInMinutes;
     }
 
-    public String getServings() {
+    public int getServings() {
         return servings;
     }
 
-    public void setServings(String servings) {
+    public void setServings(int servings) {
         this.servings = servings;
     }
 

@@ -1,43 +1,26 @@
 package com.coderscampus.assignment10.domain;
 
+import java.util.List;
+
 public class DayResponse {
-    private String numCalories;
-    private String diet;
-    private String exclusions;
+    private List<Meals> meals;
+    private Nutrients nutrients;
 
     public DayResponse() {
     }
-
-    public String getNumCalories() {
-        return numCalories;
+    public List<Meals> getMeals() {
+        return meals;
     }
 
-    public void setNumCalories(String numCalories) {
-        this.numCalories = numCalories;
+    public void setMeals(List<Meals> meals) {
+        this.meals = meals;
     }
 
-    public String getDiet() {
-        return diet;
+    public Nutrients getNutrients() {
+        return nutrients;
     }
 
-    public void setDiet(String diet) {
-        this.diet = diet;
-    }
-
-    public String getExclusions() {
-        return exclusions;
-    }
-
-    public void setExclusions(String exclusions) {
-        this.exclusions = exclusions;
-    }
-
-    @Override
-    public String toString() {
-        return "DayMeals{" +
-                "numCalories='" + numCalories + '\'' +
-                ", diet='" + diet + '\'' +
-                ", exclusions='" + exclusions + '\'' +
-                '}';
+    public void setNutrients(Nutrients nutrients) {
+        this.nutrients = nutrients;
     }
 }
