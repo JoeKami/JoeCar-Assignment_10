@@ -30,6 +30,56 @@ public class MealPlanService {
 
         String apiUrl = spoonacularBaseUrl + spoonacularMealPlanUrl;
 
+        if (numCalories != null && diet != null && exclusions != null) {
+            UriComponentsBuilder uriComponentsBuilder = UriComponentsBuilder.fromUriString(apiUrl)
+                    .queryParam("timeFrame", "day")
+                    .queryParam("targetCalories", numCalories)
+                    .queryParam("diet", diet)
+                    .queryParam("exclude", exclusions)
+                    .queryParam("apiKey", apiKey);
+
+            String finalUrl = uriComponentsBuilder.toUriString();
+            ResponseEntity<DayResponse> response = restTemplate.getForEntity(finalUrl, DayResponse.class);
+            return response.getBody();
+        }
+        if (numCalories == null && diet != null && exclusions != null) {
+            UriComponentsBuilder uriComponentsBuilder = UriComponentsBuilder.fromUriString(apiUrl)
+                    .queryParam("timeFrame", "day")
+                    .queryParam("targetCalories", numCalories)
+                    .queryParam("diet", diet)
+                    .queryParam("exclude", exclusions)
+                    .queryParam("apiKey", apiKey);
+
+            String finalUrl = uriComponentsBuilder.toUriString();
+            ResponseEntity<DayResponse> response = restTemplate.getForEntity(finalUrl, DayResponse.class);
+            return response.getBody();
+        }
+        if (numCalories != null && diet == null && exclusions != null) {
+            UriComponentsBuilder uriComponentsBuilder = UriComponentsBuilder.fromUriString(apiUrl)
+                    .queryParam("timeFrame", "day")
+                    .queryParam("targetCalories", numCalories)
+                    .queryParam("diet", diet)
+                    .queryParam("exclude", exclusions)
+                    .queryParam("apiKey", apiKey);
+
+            String finalUrl = uriComponentsBuilder.toUriString();
+            ResponseEntity<DayResponse> response = restTemplate.getForEntity(finalUrl, DayResponse.class);
+            return response.getBody();
+        }
+        if (numCalories != null && diet != null && exclusions == null) {
+            UriComponentsBuilder uriComponentsBuilder = UriComponentsBuilder.fromUriString(apiUrl)
+                    .queryParam("timeFrame", "day")
+                    .queryParam("targetCalories", numCalories)
+                    .queryParam("diet", diet)
+                    .queryParam("exclude", exclusions)
+                    .queryParam("apiKey", apiKey);
+
+            String finalUrl = uriComponentsBuilder.toUriString();
+            ResponseEntity<DayResponse> response = restTemplate.getForEntity(finalUrl, DayResponse.class);
+            return response.getBody();
+        }
+        if (numCalories == null && diet == null && exclusions == null) {}
+
         UriComponentsBuilder uriComponentsBuilder = UriComponentsBuilder.fromUriString(apiUrl)
                 .queryParam("timeFrame", "day")
                 .queryParam("targetCalories", numCalories)
