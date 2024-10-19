@@ -5,7 +5,7 @@ public class Nutrients {
     private Double protein;
     private Double fat;
     private Double carbohydrates;
-    
+
     public Nutrients(Double calories, Double protein, Double fat, Double carbohydrates) {
         this.calories = calories;
         this.protein = protein;
