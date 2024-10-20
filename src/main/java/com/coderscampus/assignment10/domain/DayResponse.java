@@ -23,4 +23,12 @@ public class DayResponse {
     public void setNutrients(Nutrients nutrients) {
         this.nutrients = nutrients;
     }
+
+    @Override
+    public String toString() {
+        return "DayResponse{" +
+                "meals=" + meals +
+                ", nutrients=" + nutrients +
+                '}';
+    }
 }

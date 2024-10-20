@@ -47,4 +47,14 @@ public class Nutrients {
     public void setCarbohydrates(Double carbohydrates) {
         this.carbohydrates = carbohydrates;
     }
+
+    @Override
+    public String toString() {
+        return "Nutrients{" +
+                "calories=" + calories +
+                ", protein=" + protein +
+                ", fat=" + fat +
+                ", carbohydrates=" + carbohydrates +
+                '}';
+    }
 }

@@ -15,4 +15,11 @@ public class WeekResponse {
     public void setWeek(Map<String, DayResponse> week) {
         this.week = week;
     }
+
+    @Override
+    public String toString() {
+        return "WeekResponse{" +
+                "week=" + week +
+                '}';
+    }
 }
